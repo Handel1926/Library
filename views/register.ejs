@@ -1,0 +1,27 @@
+<%- include("partials/header") -%>
+
+<div class="regMaindiv">
+        <div class="regformdiv card">
+            <form action="/register" method="post">
+                <label >Username</label>
+                <input   type="text" name="name">
+                <label >Email</label>
+                <input  type="email" name="username">
+                <label >Password</label>
+                <input id="myInput"  type="password" autocomplete="off" name="password">
+                <div>
+                    <input type="checkbox" onclick="myFunction()"><span>Show Password</span>
+                </div>
+                
+                <button type="submit">SignUp</button>
+            </form>
+            <div class="googlediv">
+                <label for="">SignUp With</label>
+                <a class="googleAuth-btn card" href="/auth/google" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </div>
+</div>
+
+<%- include("partials/aboutfooter") -%>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAW LIBRARY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="homeBody">
+    <div class="homemainDiv">
+        <div class="navDiv">
+        <nav class="homeNav card">
+            <h1>PAW lib</h1>
+            <ul class="apmul">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/dashboard">Dashbaord</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/logout">Logout</a></li>
+                <% if (manager) { %>
+                <li><a href="/install">Install Books</a></li>
+                <li><a href="/publish">Publish Write Up</a></li>
+                <% } %>
+                <li>
+                  <div id="search">
+
+                  </div>
+                    
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        
+        </div>
+        <div  class="category card">
+            <% faculties.forEach(function(faculty){ %>
+            <div class="dropdown">
+              <p><%=faculty.title%></p>
+              <div class="dropdown-menu">
+                <ul>
+                  <% faculty.depts.forEach(function(department){ %>
+                  <li>
+                    <a href="/page/<%=department._id%>"><%=department.title%></a>
+                  </li>
+                  <hr>
+                <% })%>
+                </ul>
+              </div>
+            </div>
+            <% })%>
+          </div>
+    
